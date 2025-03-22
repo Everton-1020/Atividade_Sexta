@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Agência de Telefone</title>
+    <link rel="stylesheet" href="sprint1.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="form">Formulário de Contato</h1>
+        <form id="phoneForm" onsubmit="return validarFormulario()">
+            <div class="input-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
 
+            <div class="input-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+           
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <img src="Necto.jpg" alt="" class="foto">
+
+    <script src="sprint1.js"></script>
+</body>
+</html>
