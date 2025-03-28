@@ -46,3 +46,15 @@ li {
     left: 30px;
 
 }
+.botao { 
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #7b0588;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
