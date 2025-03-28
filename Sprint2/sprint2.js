@@ -22,6 +22,13 @@ function exibirContatos() {
         listaElement.appendChild(item);
     });
 }
+// Definindo a variável que vai pegar o botão
+var botao = document.getElementById('Return');
+
+botao.addEventListener('click', function() {
+    // Redirecionando para outra página HTML
+    window.location.href = 'splint.html'; // Substitua 'pagina2.html' pelo nome do arquivo para o qual você deseja redirecionar
+});
 
 // Chama a função para exibir os contatos
 exibirContatos();
