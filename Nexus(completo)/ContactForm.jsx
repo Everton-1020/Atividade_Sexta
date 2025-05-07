@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContacts } from "./ContactContext"; // importa o hook
 import './style.css'
 import Nexus from '../../assets/nexus_code.jpeg'
+import api from '../../services/api';
 
 
 const ContactForm = () => {
@@ -45,12 +46,22 @@ const ContactForm = () => {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validarFormulario()) {
-      addContact(formData); // salva o contato
-      setFormData({ nome: "", telefone: "", email: "" }); // limpa o form
-      alert("Contato adicionado!");
+      try {
+        await api.post('/usuarios', {
+          name: formData.nome,
+          telefone: formData.telefone,
+          email: formData.email
+        });
+  
+        alert("Contato adicionado!");
+        setFormData({ nome: "", telefone: "", email: "" });
+      } catch (error) {
+        console.error("Erro ao adicionar contato:", error);
+        alert("Erro ao adicionar contato.");
+      }
     }
   };
 
